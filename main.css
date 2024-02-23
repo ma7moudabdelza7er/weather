@@ -1,0 +1,88 @@
+*{
+    margin: 0;
+    padding: 0;
+}
+body{
+    background: linear-gradient(darkred,rgb(58, 70, 70));
+    height: 100vh;
+    font-family:cursive;
+    
+}
+section{
+    /* background: url(0.png.jpg); */
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+ul{
+    text-align: center;
+}
+ul:hover li a{
+    opacity: 0;
+}
+ul li {
+    list-style: none;
+    text-decoration: none;
+    margin: 14px 0;
+
+}
+ul li a{
+    color: white;
+    text-decoration: none;
+    font-size: 20px;
+    font-weight: 500;
+    letter-spacing: 4px;
+    background: rgb(56, 24, 24);
+    border-radius: 20px;
+    display: inline-block;
+    width: 120px;
+    text-transform: uppercase;
+    transition: 0.5s;
+    padding: 5px;
+    /* position: relative;
+    z-index: 10; */
+}
+ul li a:hover{
+    transform: scale(1.5);
+    background: darkred;
+    opacity: 1;
+}
+ul li::after{
+    content: attr(data-text);
+    color: white;
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%,-50%);
+    font-size: 80px;
+    font-weight: 900;
+    text-transform: uppercase;
+    opacity: 0;
+    pointer-events: none;
+    letter-spacing: 50px;
+    transition: 0.5s;
+    z-index: -1;
+}
+ul li:hover::after{
+    opacity: 0.5;
+    letter-spacing: 5px;
+}
+
+ul li::before{
+    content: '';
+    width: 80px;
+    height: 80px;
+    background: black;
+    position: absolute;
+    border-radius: 50%;
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%,70%);
+    z-index: -1;
+    opacity: 0;
+    box-shadow: 0 0 80px khaki;
+}
+ul li:hover::before{
+    opacity: 0.8;
+}
